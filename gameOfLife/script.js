@@ -1,48 +1,7 @@
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
 
-menu();
-
-function menu() {
-	var botonx = 140;
-	var botony = 200;
-	var botonw = 120;
-	var botonh = 30;
-
-	ctx.fillStyle = "#b4a451";
-	ctx.fillRect(botonx, botony, botonw+3, botonh+3);
-	ctx.fillStyle = "#e1cd66";
-	ctx.fillRect(botonx, botony, botonw, botonh);
-
- 	ctx.font = '30px verdana';
- 	ctx.fillStyle = 'black';
- 	ctx.fillText('Game of Life', 100, 180);
-  	ctx.font = '15px courier';
-  	ctx.fillText('0 PLAYERS', 157, 220);
-  	ctx.fillText('v0.1', 350, 385);
-
-	canvas.addEventListener('click', function(event) {
-		if(
-			event.x > botonx &&
-			event.x < botonx + botonw &&
-			event.y > botony &&
-			event.y < botony + botonh
-		){
-			ctx.fillStyle = "#706633";
-			ctx.fillRect(botonx, botony, botonw+3, botonh+3);
-			ctx.fillStyle = "#877b3d";
-			ctx.fillRect(botonx, botony, botonw, botonh);
-			ctx.fillStyle = 'black';
-			ctx.font = '15px courier';
-			ctx.fillText('0 PLAYERS', 157, 220);
-
-			setTimeout(function() {  				
-				ctx.clearRect(0, 0, 400, 400);
-				startLife();
-			}, 10);
-		}
-	});	
-}
+startLife();
 
 function startLife() {
 	var gridHeight = 400;

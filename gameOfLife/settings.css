@@ -1,1 +1,5 @@
-body {background-color: #666666;}
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #666666;
+}
