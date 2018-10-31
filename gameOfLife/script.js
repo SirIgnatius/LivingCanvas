@@ -1,8 +1,6 @@
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
 
-startLife();
-
 function startLife() {
 	var gridHeight = 400;
 	var gridWidth = 400;
