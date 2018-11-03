@@ -1,6 +1,8 @@
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
 
+startLife();
+
 function startLife() {
 	var gridHeight = 400;
 	var gridWidth = 400;
@@ -11,7 +13,7 @@ function startLife() {
 	loop();
 
 	function loop() {
-		drawGrid();
+		dibujarGrid();
 		actualizarGrid();
 		requestAnimationFrame(loop);
 	}
@@ -32,7 +34,7 @@ function startLife() {
 		}
 	}
 
-	function drawGrid() { //dibuja los valores de la tabla en el canvas
+	function dibujarGrid() { //dibuja los valores de la tabla en el canvas
 		ctx.clearRect(0, 0, 400, 400);
 
 		for(var j = 1; j < gridHeight; j++) {
