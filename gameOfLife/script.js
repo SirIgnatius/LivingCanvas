@@ -11,7 +11,7 @@ function startLife() {
 	loop();
 
 	function loop() {
-		drawGrid();
+		dibujarGrid();
 		actualizarGrid();
 		requestAnimationFrame(loop);
 	}
@@ -32,7 +32,7 @@ function startLife() {
 		}
 	}
 
-	function drawGrid() { //dibuja los valores de la tabla en el canvas
+	function dibujarGrid() { //dibuja los valores de la tabla en el canvas
 		ctx.clearRect(0, 0, 400, 400);
 
 		for(var j = 1; j < gridHeight; j++) {
@@ -72,14 +72,12 @@ function startLife() {
 
 				} else if(grid[j][k] === 1) {
 					switch(totCel) {
-						case 0:
-						case 1:
-							copiaGrid[j][k] = 0;
-							break
 						case 2:
 						case 3:
 							copiaGrid[j][k] = 1;
-							break
+							break;
+						case 0:
+						case 1:
 						case 4:
 						case 5:
 						case 6:
